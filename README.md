@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![image](https://github.com/nagarajalva5790/lobox-react/assets/30321714/9b3dab09-7c9f-4438-a10e-5f92c76bbee7)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
