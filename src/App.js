@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AutoCompleteDropdown from './shared/AutoCompleteDropdown.tsx';
 
 function App() {
+  const [dropdownValues, setDropdownValues] = useState([
+    { label: 'Education' },
+    { label: 'Yeeeah, Science!' },
+    { label: 'Art' },
+    { label: 'Sport' },
+    { label: 'Games' },
+    { label: 'Health' },
+  ]);
+
+  const handleEnterKey = (value) => {
+    setDropdownValues([...dropdownValues, { label: value }]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Lobox</h1>
+      <div className='dropdownCls'>
+        <AutoCompleteDropdown
+          options={dropdownValues}
+          label={'Select/Add Value'}
+          handleEnterKey={(value) => handleEnterKey(value)}
+        />
+      </div>
     </div>
   );
 }
